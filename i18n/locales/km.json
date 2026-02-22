@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "greeting": "សូមគោរពអញ្ជើញ: {name}"
+  },
+  "countdown": {
+    "days": "ថ្ងៃ",
+    "hours": "ម៉ោង",
+    "minutes": "នាទី",
+    "seconds": "វិនាទី"
+  },
+  "sections": {
+    "couple": "គូស្នេហ៍",
+    "dateTime": "កាលបរិច្ឆេទ និង ពេលវេលា",
+    "ceremonies": "ពិធីការ",
+    "venue": "ទីតាំង",
+    "gallery": "វិចិត្រសាល",
+    "gratitude": "សេចក្តីថ្លែងអំណរគុណ"
+  },
+  "parents": {
+    "label": "បុត្រ/បុត្រី របស់"
+  },
+  "venue": {
+    "directions": "មើលផែនទី"
+  },
+  "language": {
+    "switch": "English"
+  },
+  "footer": {
+    "madeWith": "ធ្វើឡើងដោយក្តីស្រលាញ់"
+  },
+  "error": {
+    "title": "មានបញ្ហាកើតឡើង",
+    "notFound": "រកមិនឃើញទំព័រ",
+    "goHome": "ត្រឡប់ទៅទំព័រដើម"
+  }
+}

@@ -1,0 +1,35 @@
+export interface WeddingSettings {
+  id: number
+  groom_name_km: string
+  groom_name_en: string
+  bride_name_km: string
+  bride_name_en: string
+  groom_bio_km: string
+  groom_bio_en: string
+  bride_bio_km: string
+  bride_bio_en: string
+  groom_parents_km?: string
+  groom_parents_en?: string
+  bride_parents_km?: string
+  bride_parents_en?: string
+  groom_photo: string
+  bride_photo: string
+  tagline_km: string
+  tagline_en: string
+  wedding_date: string
+  wedding_time: string
+  venue_name_km: string
+  venue_name_en: string
+  venue_address_km: string
+  venue_address_en: string
+  venue_map_url: string
+  venue_qr_code: string
+  hero_image: string
+  gratitude_message_km: string
+  gratitude_message_en: string
+  meta_title_km: string
+  meta_title_en: string
+  meta_description_km: string
+  meta_description_en: string
+  og_image: string
+}

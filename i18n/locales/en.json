@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "greeting": "Dear {name}, you are warmly invited"
+  },
+  "countdown": {
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "sections": {
+    "couple": "The Couple",
+    "dateTime": "Date & Time",
+    "ceremonies": "Ceremonies",
+    "venue": "Venue",
+    "gallery": "Gallery",
+    "gratitude": "With Gratitude"
+  },
+  "parents": {
+    "label": "Son/Daughter of"
+  },
+  "venue": {
+    "directions": "Get Directions"
+  },
+  "language": {
+    "switch": "ខ្មែរ"
+  },
+  "footer": {
+    "madeWith": "Made with love"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "notFound": "Page not found",
+    "goHome": "Go Home"
+  }
+}

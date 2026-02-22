@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #b8860b;
+  --color-gold-light: #daa520;
+  --color-burgundy: #800020;
+  --color-ivory: #fffff0;
+  --color-blush: #ffe4e1;
+  --color-charcoal: #36454f;
+
+  --font-khmer: "Battambang", serif;
+  --font-khmer-display: "Moul", serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html[lang="km"] body {
+  font-family: var(--font-khmer);
+}
+
+html[lang="en"] body {
+  font-family: var(--font-serif);
+}
+
+html[lang="km"] .font-display {
+  font-family: var(--font-khmer-display);
+}
+
+html[lang="en"] .font-display {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
