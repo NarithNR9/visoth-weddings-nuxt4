@@ -1,6 +1,8 @@
 {
   "hero": {
-    "greeting": "Dear {name}, you are warmly invited"
+    "title": "Wedding Invitation",
+    "greeting": "Dear {name}, you are warmly invited",
+    "at": "at"
   },
   "countdown": {
     "days": "Days",
