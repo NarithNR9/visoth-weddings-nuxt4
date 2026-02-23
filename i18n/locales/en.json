@@ -11,6 +11,9 @@
     "minutes": "Minutes",
     "seconds": "Seconds"
   },
+  "couple": {
+    "connector": "&"
+  },
   "sections": {
     "couple": "The Couple",
     "dateTime": "Date & Time",
@@ -20,7 +23,8 @@
     "gratitude": "With Gratitude"
   },
   "parents": {
-    "label": "Son/Daughter of"
+    "groom": "Son of",
+    "bride": "Daughter of"
   },
   "venue": {
     "directions": "Get Directions"

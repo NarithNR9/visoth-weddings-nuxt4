@@ -1,4 +1,4 @@
-export function localized<T extends Record<string, unknown>>(obj: T, field: string, locale: string): string {
-  const key = `${field}_${locale}` as keyof T
-  return (obj[key] as string) ?? ''
+export function localized(obj: object, field: string, locale: string): string {
+  const key = `${field}_${locale}`
+  return ((obj as Record<string, unknown>)[key] as string) ?? ''
 }
