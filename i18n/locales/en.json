@@ -22,6 +22,10 @@
     "gallery": "Gallery",
     "gratitude": "With Gratitude"
   },
+  "ceremonies": {
+    "day1": "Day 1",
+    "day2": "Day 2"
+  },
   "parents": {
     "groom": "Son of",
     "bride": "Daughter of"

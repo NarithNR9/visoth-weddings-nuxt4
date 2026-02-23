@@ -50,9 +50,6 @@ const KM_MONTHS = [
     "ធ្នូ",
 ];
 
-function toKhmerDigits(n: number | string): string {
-    return String(n).replace(/[0-9]/g, (d) => "០១២៣៤៥៦៧៨៩"[+d]!);
-}
 
 const formattedDate = computed(() => {
     if (!props.settings.wedding_date) return "";

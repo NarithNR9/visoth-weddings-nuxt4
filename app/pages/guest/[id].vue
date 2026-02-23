@@ -40,7 +40,7 @@ useSeoMeta({
     <SectionHero :settings="settings" :guest-name="guestName" />
     <SectionCouple :settings="settings" />
     <SectionWelcoming :settings="settings" />
-    <SectionCeremonies v-if="ceremonies?.length" :ceremonies="ceremonies" />
+    <SectionCeremonies v-if="ceremonies?.length" :ceremonies="ceremonies" :settings="settings" />
     <SectionVenue :settings="settings" />
     <SectionGallery v-if="gallery?.length" :items="gallery" />
     <SectionGratitude :settings="settings" />
