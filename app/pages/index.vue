@@ -29,7 +29,7 @@ useSeoMeta({
   <div v-if="settings">
     <SectionHero :settings="settings" />
     <SectionCouple :settings="settings" />
-    <SectionDateTime :settings="settings" />
+    <SectionWelcoming :settings="settings" />
     <SectionCeremonies v-if="ceremonies?.length" :ceremonies="ceremonies" />
     <SectionVenue :settings="settings" />
     <SectionGallery v-if="gallery?.length" :items="gallery" />

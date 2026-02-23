@@ -12,11 +12,11 @@
     "seconds": "Seconds"
   },
   "couple": {
-    "connector": "&"
+    "connector": "♡"
   },
   "sections": {
     "couple": "The Couple",
-    "dateTime": "Date & Time",
+    "welcoming": "We are honored to invite",
     "ceremonies": "Ceremonies",
     "venue": "Venue",
     "gallery": "Gallery",
