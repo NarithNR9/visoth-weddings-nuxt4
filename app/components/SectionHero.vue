@@ -74,9 +74,19 @@ const formattedDate = computed(() => {
 
 const formattedTime = computed(() => {
     if (!props.settings.wedding_time) return "";
-    if (locale.value === "km")
-        return toKhmerDigits(props.settings.wedding_time);
-    return props.settings.wedding_time;
+    const [hStr, mStr] = props.settings.wedding_time.split(":");
+    const h = parseInt(hStr!, 10);
+    const m = parseInt(mStr ?? "0", 10);
+
+    if (locale.value === "km") {
+        const period = h < 12 ? "ព្រឹក" : "ល្ងាច";
+        const h12 = h % 12 || 12;
+        return `${toKhmerDigits(h12)}:${toKhmerDigits(String(m).padStart(2, "0"))} ${period}`;
+    }
+
+    const period = h < 12 ? "am" : "pm";
+    const h12 = h % 12 || 12;
+    return `${h12}:${String(m).padStart(2, "0")}${period}`;
 });
 </script>
 
@@ -147,7 +157,7 @@ const formattedTime = computed(() => {
                 <p
                     class="absolute inset-0 font-display flex items-center justify-center text-lg text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.5)]"
                 >
-                    {{ guestName ? guestName : venueName }}
+                    {{ guestName ? guestName : $t("hero.valuableGuest") }}
                 </p>
             </div>
             <p
