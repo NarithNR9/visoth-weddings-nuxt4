@@ -96,7 +96,7 @@ const formattedTime = computed(() => {
     >
         <!-- Background image -->
         <div
-            class="absolute inset-0 bg-cover bg-center"
+            class="absolute inset-0 bg-cover bg-center bg-fixed md:bg-position-[center_top_20%]"
             :style="{ backgroundImage: `url(${heroUrl})` }"
         />
         <div class="absolute inset-0 bg-black/40" />
@@ -116,7 +116,7 @@ const formattedTime = computed(() => {
             class="relative z-10 flex-1 flex flex-col items-center justify-center"
         >
             <h1
-                class="text-4xl md:text-3xl lg:text-7xl [text-shadow:0_2px_10px_rgba(0,0,0,0.7)]"
+                class="text-4xl md:text-3xl lg:text-6xl [text-shadow:0_2px_10px_rgba(0,0,0,0.7)]"
                 style="font-family: var(--font-metal)"
             >
                 {{ groomName }}
@@ -125,11 +125,11 @@ const formattedTime = computed(() => {
             <img
                 src="~/assets/images/heart.gif"
                 alt=""
-                class="h-9 mt-3 my-6 pointer-events-none select-none"
+                class="h-9 md:h-14 mt-3 mb-9 md:my-1d2 pointer-events-none select-none"
             />
 
             <h1
-                class="text-4xl md:text-3xl lg:text-7xl [text-shadow:0_2px_10px_rgba(0,0,0,0.7)]"
+                class="text-4xl md:text-3xl lg:text-6xl [text-shadow:0_2px_10px_rgba(0,0,0,0.7)]"
                 style="font-family: var(--font-metal)"
             >
                 {{ brideName }}
@@ -173,7 +173,7 @@ const formattedTime = computed(() => {
         </div>
 
         <!-- Scroll down chevron -->
-        <div class="absolute bottom-5 left-6 z-10">
+        <!-- <div class="absolute bottom-5 left-6 z-10">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-8 w-8 text-white/80 animate-bounce"
@@ -188,6 +188,6 @@ const formattedTime = computed(() => {
                     d="M19 9l-7 7-7-7"
                 />
             </svg>
-        </div>
+        </div> -->
     </section>
 </template>
