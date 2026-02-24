@@ -8,12 +8,13 @@
   --color-blush: #ffe4e1;
   --color-charcoal: #36454f;
 
-  --font-khmer: "Battambang", serif;
+  --font-khmer: "Kantumruy Pro", sans-serif;
   --font-khmer-display: "Moul", serif;
   --font-moulpali: "Moulpali", serif;
   --font-taprom: "Taprom", serif;
   --font-fasthand: "Fasthand", serif;
   --font-metal: "Metal", serif;
+  --font-google-sans: "Google Sans", sans-serif;
   --font-serif: "Playfair Display", serif;
 }
 
@@ -26,7 +27,7 @@ html[lang="km"] body {
 }
 
 html[lang="en"] body {
-  font-family: var(--font-serif);
+  font-family: var(--font-google-sans);
 }
 
 html[lang="km"] .font-display {
