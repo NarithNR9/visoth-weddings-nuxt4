@@ -11,10 +11,7 @@ const year = computed(() => new Date(props.settings.wedding_date).getFullYear())
 </script>
 
 <template>
-  <footer class="py-8 px-4 bg-charcoal text-white/60 text-center text-sm">
-    <p class="font-display text-white/80 text-base mb-2">
-      {{ groomName }} &amp; {{ brideName }}
-    </p>
+  <footer class="p-3 bg-charcoal text-white/60 text-center text-sm">
     <p>{{ year }}</p>
     <p class="mt-2">{{ t('footer.madeWith') }}</p>
   </footer>
