@@ -6,6 +6,7 @@
     "valuableGuest": "Valuable Guest"
   },
   "countdown": {
+    "waiting": "Waiting for the special day",
     "days": "Days",
     "hours": "Hours",
     "minutes": "Minutes",
@@ -31,6 +32,8 @@
     "bride": "Daughter of"
   },
   "venue": {
+    "ceremonies": "Ceremonies Event Location",
+    "parties": "Party Event Location",
     "directions": "Get Directions"
   },
   "language": {
