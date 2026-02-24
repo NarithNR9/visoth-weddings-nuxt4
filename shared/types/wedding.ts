@@ -25,6 +25,7 @@ export interface WeddingSettings {
   venue_map_url: string
   venue_qr_code: string
   hero_image: string
+  ceremonies_image: string
   welcoming_km: string
   welcoming_en: string
   gratitude_message_km: string

@@ -56,15 +56,14 @@ export function formatTime(time: string, locale: string): string {
   const mm = String(m).padStart(2, '0')
 
   if (locale === 'km') {
-    // \u1798\u17C9\u17C4\u1784 = ម៉org ង, \u1793\u17B6\u1791\u17B8 = នorg ទorg , \u1796\u17D2\u179A\u17B9\u1780 = ព org org ក,
-    // \u179A\u179F\u17C0\u179B = org org org org org , \u179B\u17D2\u1784\u17B6\u1785 = org org org org org
-    let period = '\u1796\u17D2\u179A\u17B9\u1780'
-    if (h >= 12 && h < 17) period = '\u179A\u179F\u17C0\u179B'
-    else if (h >= 17) period = '\u179B\u17D2\u1784\u17B6\u1785'
-    return `\u1798\u17C9\u17C4\u1784 ${toKhmerDigits(h)}:${toKhmerDigits(mm)}\u1793\u17B6\u1791\u17B8 ${period}`
+    let period = 'ព្រឹក'
+    if (h >= 12 && h < 17) period = 'រសៀល'
+    else if (h >= 17) period = 'ល្ងាច'
+    const h12 = h % 12 || 12
+    return `\u1798\u17C9\u17C4\u1784 ${toKhmerDigits(h12)}:${toKhmerDigits(mm)}\u1793\u17B6\u1791\u17B8 ${period}`
   }
 
-  const period = h < 12 ? 'am' : 'pm'
+  const period = h < 12 ? 'AM' : 'PM'
   const h12 = h % 12 || 12
-  return `${h12}:${mm}${period}`
+  return `${h12}:${mm} ${period}`
 }

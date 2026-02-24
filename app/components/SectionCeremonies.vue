@@ -7,8 +7,8 @@ const props = defineProps<{
     settings: WeddingSettings;
 }>();
 
-const heroUrl = computed(() =>
-    assetUrl(props.settings.hero_image, { width: 1920, quality: 80 }),
+const bgUrl = computed(() =>
+    assetUrl(props.settings.ceremonies_image || props.settings.hero_image, { width: 1920, quality: 80 }),
 );
 
 const day1 = computed(() => props.ceremonies.filter((c) => c.day === 1));
@@ -39,8 +39,8 @@ const day2Heading = computed(() =>
     <section class="relative py-20 px-2 text-white">
         <!-- Background image -->
         <div
-            class="absolute inset-0 bg-cover bg-center"
-            :style="{ backgroundImage: `url(${heroUrl})` }"
+            class="absolute inset-0 bg-cover bg-center bg-fixed"
+            :style="{ backgroundImage: `url(${bgUrl})` }"
         />
         <div class="absolute inset-0 bg-black/60" />
 

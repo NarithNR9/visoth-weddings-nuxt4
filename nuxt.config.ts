@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [...(tailwindcss() as any)],
   },
 
   app: {
@@ -41,7 +41,6 @@ export default defineNuxtConfig({
     defaultLocale: 'km',
     strategy: 'no_prefix',
     detectBrowserLanguage: false,
-    lazy: true,
     langDir: '../i18n/locales',
   },
 
