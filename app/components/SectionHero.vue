@@ -5,7 +5,10 @@ const { assetUrl } = useDirectus();
 const props = defineProps<{
     settings: WeddingSettings;
     guestName?: string;
-}>();
+    opened?: boolean;
+}>()
+
+const emit = defineEmits<{ open: [] }>()
 
 const groomName = computed(() =>
     localized(props.settings, "groom_name", locale.value),
@@ -169,22 +172,20 @@ const formattedTime = computed(() => {
             </p>
         </div>
 
-        <!-- Scroll down chevron -->
-        <!-- <div class="absolute bottom-5 left-6 z-10">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-white/80 animate-bounce"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19 9l-7 7-7-7"
-                />
-            </svg>
-        </div> -->
+        <!-- Open invitation button (before opened) -->
+        <Transition name="fade">
+            <div v-if="!opened" class="relative z-10 pb-10 flex flex-col items-center">
+                <button
+                    class="relative px-8 py-3 rounded-full text-white font-semibold text-base cursor-pointer
+                           hover:brightness-110 active:scale-95 transition-all duration-200"
+                    style="font-family: var(--font-moulpali); background: linear-gradient(to right, #b8860b, #daa520)"
+                    @click="emit('open')"
+                >
+                    <span class="absolute inset-0 rounded-full animate-ping bg-gold/40" />
+                    {{ t('hero.open') }}
+                </button>
+            </div>
+        </Transition>
+
     </section>
 </template>

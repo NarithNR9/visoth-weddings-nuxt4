@@ -27,6 +27,15 @@ onUnmounted(() => {
   audioRef.value?.pause()
 })
 
+function play() {
+  if (!audioRef.value || isPlaying.value) return
+  audioRef.value.play()
+    .then(() => { isPlaying.value = true })
+    .catch(() => {})
+}
+
+defineExpose({ play })
+
 function toggle() {
   if (!audioRef.value) return
   if (isPlaying.value) {
