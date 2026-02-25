@@ -27,6 +27,7 @@ useSeoMeta({
 
 <template>
   <div v-if="settings">
+    <BackgroundMusic v-if="settings.background_music" :file-id="settings.background_music" />
     <SectionHero :settings="settings" />
     <SectionCouple :settings="settings" />
     <SectionWelcoming :settings="settings" />
