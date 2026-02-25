@@ -19,7 +19,7 @@ const qrCodeUrl = computed(() => {
 </script>
 
 <template>
-    <section class="py-16 px-4 bg-blush/30">
+    <section class="py-16 px-4 bg-blush/30" data-aos="fade-up">
         <h2
             class="font-display text-2xl md:text-4xl text-center text-burgundy mb-8"
         >
@@ -31,6 +31,8 @@ const qrCodeUrl = computed(() => {
             <!-- Ceremonies venue -->
             <div
                 class="bg-white rounded-xl shadow-sm p-6 text-center space-y-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
             >
                 <h3
                     class="text-base md:text-lg text-gold-light"
@@ -74,7 +76,7 @@ const qrCodeUrl = computed(() => {
             </div>
 
             <!-- Countdown -->
-            <div class="mb-12">
+            <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
                 <CountdownTimer
                     :target-date="settings.wedding_date"
                     variant="gold"

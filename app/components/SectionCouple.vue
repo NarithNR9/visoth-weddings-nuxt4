@@ -22,7 +22,7 @@ const bride = computed(() => ({
 </script>
 
 <template>
-    <section class="py-16 px-4 bg-white">
+    <section class="py-16 px-4 bg-white" data-aos="fade-up">
         <h2
             class="font-display text-3xl md:text-4xl text-center text-burgundy mb-12"
         >

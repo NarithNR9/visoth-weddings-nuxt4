@@ -18,7 +18,7 @@ function closeLightbox() {
 </script>
 
 <template>
-    <section class="py-20 px-4 bg-white">
+    <section class="py-20 px-4 bg-white" data-aos="fade-up">
         <h2
             class="font-display text-2xl md:text-4xl text-center text-burgundy mb-12"
         >
@@ -32,6 +32,8 @@ function closeLightbox() {
                 v-for="(item, index) in items"
                 :key="item.id"
                 class="aspect-3/4 overflow-hidden rounded-lg cursor-pointer group"
+                data-aos="fade-up"
+                :data-aos-delay="(index % 4) * 80"
                 @click="openLightbox(index)"
             >
                 <img

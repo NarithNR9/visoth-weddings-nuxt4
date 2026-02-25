@@ -11,7 +11,7 @@ const welcoming = computed(() =>
 </script>
 
 <template>
-    <section class="py-12 px-4 bg-blush/30">
+    <section class="py-12 px-4 bg-blush/30" data-aos="fade-up">
         <!-- Top ornament -->
         <div class="flex items-center justify-center mb-10">
             <div class="h-px flex-1 max-w-24 bg-charcoal/30" />
