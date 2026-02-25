@@ -7,7 +7,7 @@ function toggle() {
 </script>
 
 <template>
-  <div class="fixed top-0 right-0 z-50 p-4">
+  <div class="fixed top-0 right-0 z-50 p-2">
     <button
       class="px-4 py-2 bg-white/90 backdrop-blur-sm text-charcoal text-sm rounded-full shadow-md hover:bg-white transition-colors cursor-pointer"
       @click="toggle"
