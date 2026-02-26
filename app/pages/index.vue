@@ -18,20 +18,29 @@ async function handleOpen() {
 
 const metaTitle = computed(() => settings.value ? localized(settings.value, 'meta_title', locale.value) : '')
 const metaDescription = computed(() => settings.value ? localized(settings.value, 'meta_description', locale.value) : '')
-const ogImage = computed(() => settings.value?.og_image ? assetUrl(settings.value.og_image, { width: 1200 }) : '')
-
+const ogImage = computed(() => settings.value?.og_image ? assetUrl(settings.value.og_image, { width: 1200, height: 630 }) : '')
+const pageTitle = computed(() =>
+  `${metaTitle.value} | ${$t("hero.greeting") + " " + $t("hero.valuableGuest")}`
+)
 useHead({
-  title: metaTitle,
+  title: pageTitle,
   htmlAttrs: { lang: locale },
 })
 
 useSeoMeta({
-  title: metaTitle,
+  title: pageTitle,
   description: metaDescription,
-  ogTitle: metaTitle,
+  ogTitle: pageTitle,
   ogDescription: metaDescription,
   ogImage: ogImage,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageType: 'image/jpeg',
   ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterTitle: pageTitle,
+  twitterDescription: metaDescription,
+  twitterImage: ogImage,
 })
 </script>
 
