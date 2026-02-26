@@ -1,42 +1,110 @@
 <script setup lang="ts">
-const { locale, t } = useI18n()
+const { locale, t } = useI18n();
+const { assetUrl } = useDirectus();
 
-defineProps<{
-  ceremonies: Ceremony[]
-}>()
+const props = defineProps<{
+    ceremonies: Ceremony[];
+    settings: WeddingSettings;
+}>();
+
+const bgUrl = computed(() =>
+    assetUrl(props.settings.ceremonies_image || props.settings.hero_image, { width: 1920, quality: 80 }),
+);
+
+const day1 = computed(() => props.ceremonies.filter((c) => c.day === 1));
+const day2 = computed(() => props.ceremonies.filter((c) => c.day === 2));
+
+const day2DateStr = computed(() => props.settings.wedding_date);
+
+const day1DateStr = computed(() => {
+    const [y, m, d] = props.settings.wedding_date.split("-").map(Number);
+    const date = new Date(y!, m! - 1, d! - 1);
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+});
+
+const day1Heading = computed(() =>
+    locale.value === "km"
+        ? `${formatFullDate(day1DateStr.value, "km")}`
+        : `Day 1 · ${formatFullDate(day1DateStr.value, "en")}`,
+);
+
+const day2Heading = computed(() =>
+    locale.value === "km"
+        ? `${formatFullDate(day2DateStr.value, "km")}`
+        : `Day 2 · ${formatFullDate(day2DateStr.value, "en")}`,
+);
 </script>
 
 <template>
-  <section class="py-20 px-4 bg-white">
-    <h2 class="font-display text-3xl md:text-4xl text-center text-burgundy mb-16">
-      {{ t('sections.ceremonies') }}
-    </h2>
-
-    <div class="max-w-2xl mx-auto relative">
-      <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gold-light md:-translate-x-px" />
-
-      <div
-        v-for="(ceremony, i) in ceremonies"
-        :key="ceremony.id"
-        class="relative pl-12 md:pl-0 mb-12 last:mb-0"
-        :class="i % 2 === 0 ? 'md:pr-[calc(50%+2rem)] md:text-right' : 'md:pl-[calc(50%+2rem)]'"
-      >
+    <section class="relative py-20 px-2 text-white" data-aos="fade-up">
+        <!-- Background image -->
         <div
-          class="absolute left-2.5 md:left-1/2 top-1 w-3 h-3 rounded-full bg-gold border-2 border-white md:-translate-x-1.5"
+            class="absolute inset-0 bg-cover bg-center bg-fixed"
+            :style="{ backgroundImage: `url(${bgUrl})` }"
         />
-        <div class="bg-blush/30 rounded-lg p-5">
-          <span class="text-sm text-gold font-semibold">{{ ceremony.time }}</span>
-          <h3 class="font-display text-xl text-charcoal mt-1">
-            {{ localized(ceremony, 'title', locale) }}
-          </h3>
-          <p
-            v-if="localized(ceremony, 'description', locale)"
-            class="text-charcoal/70 mt-2"
-          >
-            {{ localized(ceremony, 'description', locale) }}
-          </p>
+        <div class="absolute inset-0 bg-black/60" />
+
+        <div class="relative z-10 max-w-xl mx-auto">
+            <h2
+                class="font-display text-xl md:text-4xl text-center text-gold-light mb-12"
+            >
+                {{ t("sections.ceremonies") }}
+            </h2>
+
+            <!-- Day 1 -->
+            <div v-if="day1.length" class="mb-12">
+                <h3
+                    class="text-gold-light mb-3 ml-2"
+                    style="font-family: var(--font-moulpali)"
+                >
+                    {{ day1Heading }}
+                </h3>
+                <div
+                    class="bg-white/10 backdrop-blur-sm rounded-lg px-2 md:px-5 py-4 border border-white/10"
+                >
+                    <div
+                        v-for="ceremony in day1"
+                        :key="ceremony.id"
+                        class="flex gap-2 py-3 first:pt-0 last:pb-0 border-b border-white/10 last:border-0 text-sm"
+                    >
+                        <span class="w-1/2">
+                            {{ formatTime(ceremony.time, locale) }}
+                        </span>
+                        <span>:</span>
+                        <span class="w-1/2">
+                            {{ localized(ceremony, "title", locale) }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div v-if="day2.length">
+                <h3
+                    class="text-gold-light mb-3 ml-2"
+                    style="font-family: var(--font-moulpali)"
+                >
+                    {{ day2Heading }}
+                </h3>
+                <div
+                    class="bg-white/10 backdrop-blur-sm rounded-lg px-2 md:px-5 py-4 border border-white/10 text-sm"
+                >
+                    <div
+                        v-for="ceremony in day2"
+                        :key="ceremony.id"
+                        class="flex gap-2 py-3 first:pt-0 last:pb-0 border-b border-white/10 last:border-0"
+                    >
+                        <span class="w-1/2 ">
+                            {{ formatTime(ceremony.time, locale) }}
+                        </span>
+                        <span>:</span>
+
+                        <span class="w-1/2">
+                            {{ localized(ceremony, "title", locale) }}
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </template>

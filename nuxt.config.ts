@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [...(tailwindcss() as any)],
   },
 
   app: {
@@ -27,7 +27,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Battambang:wght@300;400;700&family=Moul&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Battambang:wght@300;400;700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Moul&family=Moulpali&family=Taprom&family=Fasthand&family=Metal&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap',
         },
       ],
     },
@@ -41,7 +41,6 @@ export default defineNuxtConfig({
     defaultLocale: 'km',
     strategy: 'no_prefix',
     detectBrowserLanguage: false,
-    lazy: true,
     langDir: '../i18n/locales',
   },
 

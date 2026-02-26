@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-ivory text-charcoal">
-    <LanguageSwitcher />
+     <LanguageSwitcher /> 
     <slot />
   </div>
 </template>

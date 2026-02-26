@@ -11,8 +11,8 @@ const brideName = computed(() => localized(props.settings, 'bride_name', locale.
 </script>
 
 <template>
-  <section class="py-20 px-4 bg-burgundy text-white">
-    <h2 class="font-display text-3xl md:text-4xl text-center text-gold-light mb-12">
+  <section class="py-16 px-4 bg-gold-light text-white" data-aos="fade-up">
+    <h2 class="font-display text-2xl md:text-4xl text-center mb-9">
       {{ t('sections.gratitude') }}
     </h2>
 
@@ -20,7 +20,7 @@ const brideName = computed(() => localized(props.settings, 'bride_name', locale.
       <p class="text-lg md:text-xl leading-relaxed text-white/90 whitespace-pre-line">
         {{ message }}
       </p>
-      <p class="mt-8 font-display text-xl text-gold-light">
+      <p class="mt-8 font-display text-xl">
         {{ groomName }} &amp; {{ brideName }}
       </p>
     </div>
