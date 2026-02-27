@@ -36,7 +36,7 @@ const day2Heading = computed(() =>
 </script>
 
 <template>
-    <section class="relative py-20 px-2 text-white" data-aos="fade-up">
+    <section class="relative py-20 px-2 text-white">
         <!-- Background image -->
         <div
             class="absolute inset-0 bg-cover bg-center bg-fixed"
@@ -44,7 +44,7 @@ const day2Heading = computed(() =>
         />
         <div class="absolute inset-0 bg-black/60" />
 
-        <div class="relative z-10 max-w-xl mx-auto">
+        <div class="relative z-10 max-w-xl mx-auto" data-aos="fade-up">
             <h2
                 class="font-display text-xl md:text-4xl text-center text-gold-light mb-12"
             >
